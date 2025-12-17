@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌸 Productivity Pro - 20-Day Excellence Journey</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@700&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="floating-elements">
+      <div class="floating-element fe1"></div>
+      <div class="floating-element fe2"></div>
+      <div class="floating-element fe3"></div>
+      <div class="floating-element fe4"></div>
+    </div>
+
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo">
+          <div class="logo-icon">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="logo-text">
+            <h1>Productivity Pro</h1>
+            <p>20-Day Excellence Journey | SSC + Web Dev</p>
+          </div>
+        </div>
+
+        <div class="current-date">
+          <span class="date-day" id="current-date-day">Wednesday</span>
+          <span class="date-full" id="current-date-full">Loading...</span>
+        </div>
+      </header>
+
+      <!-- Wellness Stats -->
+      <section class="wellness-stats">
+        <div class="wellness-card sleep">
+          <div class="wellness-header">
+            <div class="wellness-icon sleep">
+              <i class="fas fa-moon"></i>
+            </div>
+            <div>
+              <h3 class="wellness-title">Sleep Tracker</h3>
+              <span class="wellness-goal">Goal: 6+ hours daily</span>
+            </div>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar">
+              <div
+                class="progress-fill sleep"
+                id="sleep-progress"
+                style="width: 0%"
+              ></div>
+            </div>
+            <div class="progress-text">
+              <span id="sleep-current">0 hours</span>
+              <span>6 hours</span>
+            </div>
+          </div>
+          <div class="progress-actions">
+            <button class="progress-btn" id="sleep-add-1">
+              <i class="fas fa-plus"></i> 1 Hour
+            </button>
+            <button class="progress-btn" id="sleep-add-2">
+              <i class="fas fa-plus"></i> 2 Hours
+            </button>
+            <button class="progress-btn" id="sleep-reset">
+              <i class="fas fa-redo"></i> Reset
+            </button>
+          </div>
+        </div>
+
+        <div class="wellness-card water">
+          <div class="wellness-header">
+            <div class="wellness-icon water">
+              <i class="fas fa-tint"></i>
+            </div>
+            <div>
+              <h3 class="wellness-title">Water Intake</h3>
+              <span class="wellness-goal">Goal: 3 liters daily</span>
+            </div>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar">
+              <div
+                class="progress-fill water"
+                id="water-progress"
+                style="width: 0%"
+              ></div>
+            </div>
+            <div class="progress-text">
+              <span id="water-current">0 liters</span>
+              <span>3 liters</span>
+            </div>
+          </div>
+          <div class="progress-actions">
+            <button class="progress-btn" id="water-add-250">
+              <i class="fas fa-plus"></i> 250ml
+            </button>
+            <button class="progress-btn" id="water-add-500">
+              <i class="fas fa-plus"></i> 500ml
+            </button>
+            <button class="progress-btn" id="water-reset">
+              <i class="fas fa-redo"></i> Reset
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Left Column: Day Progress -->
+        <div class="left-column">
+          <section class="day-progress-section">
+            <div class="section-header">
+              <div class="section-icon">
+                <i class="fas fa-calendar-check"></i>
+              </div>
+              <h2 class="section-title">
+                Day <span id="day-number">1</span> Progress
+              </h2>
+              <span class="day-type-badge" id="day-type-badge"
+                >SAT/MON/WED</span
+              >
+            </div>
+
+            <div class="day-selector">
+              <div class="day-nav">
+                <button class="nav-btn" id="prev-day">
+                  <i class="fas fa-chevron-left"></i> Previous
+                </button>
+                <button class="nav-btn" id="next-day">
+                  Next <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+
+              <div class="day-display">
+                <div class="day-number">
+                  Day <span id="current-day-num">1</span>
+                </div>
+                <div class="day-name" id="current-day-name">Wednesday</div>
+              </div>
+
+              <select
+                class="nav-btn"
+                id="day-select"
+                style="padding: 12px 20px"
+              >
+                <!-- Options will be populated by JavaScript -->
+              </select>
+            </div>
+
+            <!-- Schedule with Checkboxes -->
+            <div class="schedule-container" id="schedule-container">
+              <!-- Schedule items will be populated by JavaScript -->
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+              <button class="action-btn complete" id="mark-day-complete">
+                <i class="fas fa-check-circle"></i> Mark Day as Complete
+              </button>
+              <button class="action-btn reset" id="reset-day">
+                <i class="fas fa-undo"></i> Reset Day
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Column: Sidebar -->
+        <div class="sidebar">
+          <!-- Motivational Quote -->
+          <section class="quote-section">
+            <p class="quote-text" id="daily-quote">
+              "Consistency is the key to mastery. Small daily improvements lead
+              to stunning results."
+            </p>
+            <p class="quote-author">- Productivity Pro</p>
+            <button class="quote-btn" id="new-quote-btn">
+              <i class="fas fa-redo"></i> New Inspiration
+            </button>
+          </section>
+
+          <!-- Stats -->
+          <section class="stats-section">
+            <div class="section-header">
+              <div
+                class="section-icon"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    var(--coding-color),
+                    #38bdf8
+                  );
+                "
+              >
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h2 class="section-title">Today's Stats</h2>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-icon study">
+                  <i class="fas fa-book"></i>
+                </div>
+                <div class="stat-value" id="stat-study">0h</div>
+                <div class="stat-label">Study Time</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-icon coding">
+                  <i class="fas fa-code"></i>
+                </div>
+                <div class="stat-value" id="stat-coding">0h</div>
+                <div class="stat-label">Coding Time</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-icon workout">
+                  <i class="fas fa-dumbbell"></i>
+                </div>
+                <div class="stat-value" id="stat-workout">0</div>
+                <div class="stat-label">Workouts</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-icon prayer">
+                  <i class="fas fa-hands-praying"></i>
+                </div>
+                <div class="stat-value" id="stat-prayer">5</div>
+                <div class="stat-label">Prayers</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Streaks & Achievements -->
+          <section class="streak-section">
+            <div class="streak-header">
+              <i class="fas fa-fire streak-icon"></i>
+              <h3 class="streak-title">Current Streak</h3>
+            </div>
+
+            <div class="streak-count" id="streak-count">0</div>
+            <div class="streak-days" id="streak-days">days in a row!</div>
+
+            <div class="streak-visual" id="streak-visual">
+              <!-- Streak days will be populated by JavaScript -->
+            </div>
+
+            <h4 style="margin: 20px 0 15px; font-weight: 700">Achievements</h4>
+
+            <div class="achievement-badge" id="achievement-1">
+              <div class="badge-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="badge-info">
+                <h4>Study Master</h4>
+                <p>Complete 5 study sessions</p>
+              </div>
+            </div>
+
+            <div class="achievement-badge locked" id="achievement-2">
+              <div class="badge-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <div class="badge-info">
+                <h4>Coding Warrior</h4>
+                <p>10+ hours of coding</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          Designed with
+          <span class="heart"><i class="fas fa-heart"></i></span> for SSC
+          Students & Aspiring Developers
+        </p>
+        <p>All progress is automatically saved in your browser</p>
+        <button class="reset-all" id="reset-all-btn">Reset All Progress</button>
+      </footer>
+
+      <!-- Celebration Modal -->
+      <div class="modal" id="celebration-modal">
+        <div class="modal-content">
+          <div class="modal-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <h2 class="modal-title">Amazing Work!</h2>
+          <p class="modal-message" id="modal-message">
+            You've completed Day 1! Keep up the great work!
+          </p>
+          <button class="modal-btn" id="modal-close-btn">
+            Continue Journey
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
